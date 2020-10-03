@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="only_2020">Все года</string>
+    <string name="all_movies">2020 год</string>
+    <string name="movie_poster">movie poster</string>
+    <string name="connection_lost">Internet connection lost</string>
+</resources>

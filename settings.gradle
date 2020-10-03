@@ -5,3 +5,9 @@ project(':app').projectDir = new File(rootDir, 'app')
 include ':domain'
 project(':domain').projectDir = new File(rootDir, 'domain')
 
+include ':featureMainScreen'
+project(':featureMainScreen').projectDir = new File(rootDir, 'featureMainScreen')
+
+include ':data'
+project(':data').projectDir = new File(rootDir, 'data')
+
