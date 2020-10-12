@@ -3,13 +3,8 @@ import android.net.ConnectivityManager
 
 object ConnectivityHelper {
     fun isConnectedToNetwork(context: Context): Boolean {
-        val connectivityManager =
-            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        var isConnected = false
-        if (connectivityManager != null) {
-            val activeNetwork = connectivityManager.activeNetworkInfo
-            isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting
-        }
-        return isConnected
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetwork = connectivityManager.activeNetworkInfo
+        return activeNetwork != null && activeNetwork.isConnectedOrConnecting
     }
 }

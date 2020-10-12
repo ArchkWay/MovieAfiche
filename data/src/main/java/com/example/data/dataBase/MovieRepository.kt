@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.LiveData
 
 class MovieRepository(aplication: Application) {
-    var movieDao: MovieDao? = null
+    private var movieDao: MovieDao? = null
     var allMovies: LiveData<List<MovieSaved>>? = null
 
     init {

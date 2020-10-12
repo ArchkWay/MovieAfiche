@@ -14,6 +14,7 @@ class MovieViewModel(application: Application) : AndroidViewModel(application) {
     private val repository: MovieRepository = MovieRepository(application)
     val allMovies: LiveData<List<MovieSaved>>?
     private val job = SupervisorJob()
+    var list: List<MovieSaved>? = null
 
 
     fun getMoviesFromNet() {
@@ -23,7 +24,7 @@ class MovieViewModel(application: Application) : AndroidViewModel(application) {
             val moviesSaved = movies?.map {
                 MovieSaved(
                     id = it.id?.toInt() ?: 0,
-                    year = it.year ?: 2020,
+                    year = it.year ?: TWENTY_TWENTY,
                     url = it.poster ?: ""
                 )
             }
@@ -36,10 +37,13 @@ class MovieViewModel(application: Application) : AndroidViewModel(application) {
 
     }
 
-    var list: List<MovieSaved>? = null
 
     init {
         allMovies = repository.allMovies
+    }
+
+    companion object {
+        const val TWENTY_TWENTY = 2020
     }
 }
 
