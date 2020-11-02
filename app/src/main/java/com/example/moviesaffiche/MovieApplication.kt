@@ -1,12 +1,5 @@
 package com.example.moviesaffiche
 
-import androidx.multidex.MultiDex
-import androidx.multidex.MultiDexApplication
+import android.app.Application
 
-class MovieApplication : MultiDexApplication() {
-
-    override fun onCreate() {
-        super.onCreate()
-        MultiDex.install(this)
-    }
-}
+class MovieApplication : Application()

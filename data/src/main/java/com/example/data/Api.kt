@@ -6,6 +6,6 @@ import retrofit2.http.GET
 
 interface Api {
     @GET("ar2code/apitest/master/movies.json")
-    fun getMovieList(): Deferred<MoviesResponse>
+    fun getMovieListAsync(): Deferred<List<MoviesResponse.MoviesResponseItem>>
 
 }

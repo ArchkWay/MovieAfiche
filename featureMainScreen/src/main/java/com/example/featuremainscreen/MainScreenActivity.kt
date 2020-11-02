@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_main_screen.*
 
 
 class MainScreenActivity : AppCompatActivity() {
+
     private var adapter: MovieAdapter? = null
     private var spanCount = 3
 

@@ -6,7 +6,6 @@ import androidx.lifecycle.LiveData
 import com.example.data.NetDataGetter
 import com.example.data.dataBase.MovieRepository
 import com.example.data.dataBase.MovieSaved
-import com.example.domain.entity.MoviesResponse
 import kotlinx.coroutines.*
 
 
@@ -20,7 +19,7 @@ class MovieViewModel(application: Application) : AndroidViewModel(application) {
     fun getMoviesFromNet() {
         CoroutineScope(Dispatchers.IO + job).launch {
             val netDataGetter = NetDataGetter()
-            val movies = netDataGetter.getMoviesCall() as? List<MoviesResponse.MoviesResponseItem>
+            val movies = netDataGetter.getMoviesCall()
             val moviesSaved = movies?.map {
                 MovieSaved(
                     id = it.id?.toInt() ?: 0,

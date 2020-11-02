@@ -4,7 +4,7 @@ package com.example.domain.entity
 import com.google.gson.annotations.SerializedName
 import java.util.*
 
-class MoviesResponse : ArrayList<MoviesResponse.MoviesResponseItem>(){
+class MoviesResponse {
     data class MoviesResponseItem(
         @SerializedName("id")
         val id: String? = null,

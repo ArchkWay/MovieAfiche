@@ -5,10 +5,7 @@ import com.example.domain.entity.MoviesResponse
 
 
 class NetDataGetter {
-    val api: Api? = null
 
-    suspend fun getMoviesCall(): MoviesResponse? {
-        val api = RetrofitProvider().api
-        return api.getMovieList().await()
-    }
+    suspend fun getMoviesCall(): List<MoviesResponse.MoviesResponseItem>? = RetrofitProvider().api.getMovieListAsync().await()
+
 }
